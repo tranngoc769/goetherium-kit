@@ -21,3 +21,15 @@ func TestGetAccountBalance(t *testing.T) {
 	}
 	fmt.Println(balance)
 }
+
+// test generate wallet
+func TestGenerateWallet(t *testing.T) {
+	privateKey, publicKey, address, err := GenerateWallet()
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	fmt.Println("privateKey", privateKey)
+	fmt.Println("publicKey", publicKey)
+	fmt.Println("address", address)
+}
