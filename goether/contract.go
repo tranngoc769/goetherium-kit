@@ -63,3 +63,13 @@ func LoadStoreContract(address common.Address) (*store.Store, error) {
 	}
 	return instance, err
 }
+
+// test
+func GetContractVersion(contract *store.Store) {
+	version, err := contract.Version(nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("contract version:", version)
+}

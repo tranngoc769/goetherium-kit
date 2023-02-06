@@ -49,3 +49,12 @@ func TestLoadContract(t *testing.T) {
 	}
 	fmt.Println(contract)
 }
+func TestGetContractVersion(t *testing.T) {
+	address := common.HexToAddress("0x15b9b1c19e3cd9950d2848ca6d117ea1527aa5a1")
+	contract, err := LoadStoreContract(address)
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	GetContractVersion(contract)
+}
