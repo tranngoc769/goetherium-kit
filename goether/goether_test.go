@@ -33,3 +33,8 @@ func TestGenerateWallet(t *testing.T) {
 	fmt.Println("publicKey", publicKey)
 	fmt.Println("address", address)
 }
+
+// test deploy contract
+func TestDeployContract(t *testing.T) {
+	DeployContract()
+}
