@@ -3,6 +3,8 @@ package goether
 import (
 	"fmt"
 	"testing"
+
+	"github.com/ethereum/go-ethereum/common"
 )
 
 func init() {
@@ -37,4 +39,13 @@ func TestGenerateWallet(t *testing.T) {
 // test deploy contract
 func TestDeployContract(t *testing.T) {
 	DeployContract()
+}
+func TestLoadContract(t *testing.T) {
+	address := common.HexToAddress("0x15b9b1c19e3cd9950d2848ca6d117ea1527aa5a1")
+	contract, err := LoadStoreContract(address)
+	if err != nil {
+		t.Error(err)
+		return
+	}
+	fmt.Println(contract)
 }
